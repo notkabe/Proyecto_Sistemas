@@ -22,11 +22,11 @@ class AdminSeeder extends Seeder
         ]);
 
         Client::create([
-            'user_id' => $admin->id, // Asociar al usuario admin
+            'user_id' => $admin->id,
             'name' => $admin->name,
             'email' => $admin->email,
-            'phone_number' => '000000000', // Puedes cambiarlo o dejarlo vacío
-            'balance' => 0.00, // Puedes asignarle un saldo inicial si quieres
+            'phone_number' => '000000000',
+            'balance' => 0.00,
         ]);
     }
 }

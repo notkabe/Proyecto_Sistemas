@@ -18,11 +18,11 @@ class CreateClientAfterRegister
     {
         // Crear un cliente asociado al nuevo usuario registrado
         Client::create([
-            'user_id' => $event->user->id,  // Asociamos el cliente con el ID del usuario registrado
-            'name' => $event->user->name,    // Opcional: Puedes copiar el nombre del usuario
-            'email' => $event->user->email,  // Opcional: Puedes copiar el email del usuario
-            'phone_number' => null,           // Puedes asignar valores predeterminados o vacíos
-            'balance' => 0,                   // Balance inicial
+            'user_id' => $event->user->id,
+            'name' => $event->user->name,
+            'email' => $event->user->email,
+            'phone_number' => null,
+            'balance' => 0,
         ]);
     }
 }

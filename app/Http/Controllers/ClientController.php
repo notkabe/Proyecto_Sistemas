@@ -18,14 +18,11 @@ class ClientController extends Controller
      */
     public function index(): View
     {
-        // Obtener el cliente asociado al usuario logueado
         $client = Client::where('user_id', Auth::id())->first();
 
-        // Verificar si se encuentra el cliente
         if ($client) {
             return view('client.index', compact('client'));
         } else {
-            // Si no se encuentra, retornar un error o redirigir
             return view('client.create')->with('error', 'Client not found. Please create your profile.');
         }
     }
@@ -79,7 +76,6 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client): RedirectResponse
     {
-        // Validación de los datos
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -87,31 +83,24 @@ class ClientController extends Controller
             'balance' => 'required|numeric',
         ]);
 
-        // Actualizar el cliente con los datos validados
         $client->update($validated);
 
-        // Redirigir con un mensaje de éxito
         return redirect()->route('clients.index')->with('success', 'Profile updated successfully.');
     }
 
     public function destroy($id): RedirectResponse
     {
-        // Encontrar el cliente y su usuario asociado
         $client = Client::findOrFail($id);
 
-        // Obtener el usuario asociado al cliente (si está disponible)
         $user = $client->user;
 
-        // Eliminar el cliente
         $client->delete();
 
-        // Si el usuario existe, eliminarlo y hacer logout
         if ($user) {
-            $user->delete();  // Eliminar al usuario
-            Auth::logout();    // Logout del usuario
+            $user->delete();
+            Auth::logout();
         }
 
-        // Redirigir al home o donde desees
         return Redirect::route('home')
             ->with('success', 'Client and user deleted successfully, you are logged out.');
     }
