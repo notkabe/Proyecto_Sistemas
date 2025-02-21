@@ -1,0 +1,150 @@
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1; /* Fondo gris claro */
+    background-image: url(public\selfinance_logo.jpeg);
+    color: #333;
+    
+}
+
+/* Estilos para la tarjeta principal */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: none;
+}
+
+/* Cabecera de la tarjeta */
+.card-header {
+    background-color: #28a745; /* Verde */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-header h3 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Contenido de la tarjeta */
+.card-body {
+    background-color: #f8f9fa; /* Gris suave */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Estilo para el mensaje de éxito */
+.alert-success {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.alert-success strong {
+    font-weight: bold;
+}
+
+/* Botón de acción */
+.btn {
+    border-radius: 50px;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos y texto en el cuerpo */
+h5 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #333;
+}
+
+p.lead {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #555;
+}
+
+/* Fondo y espaciado de los contenedores */
+.container {
+    max-width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.row.justify-content-center {
+    margin-top: 2rem;
+}
+
+.col-md-8 {
+    margin: 0 auto;
+}
+
+/* Estilo de texto y alineación */
+.text-center {
+    text-align: center;
+}
+
+/* Alertas en forma de "toast" */
+.alert-dismissible {
+    border-radius: 8px;
+}
+
+.close {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+/* Estilos de sombra en las tarjetas */
+.shadow-lg {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.my-5 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Márgenes alrededor de los elementos */
+.mb-5 {
+    margin-bottom: 2rem;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
